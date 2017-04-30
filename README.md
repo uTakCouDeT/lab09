@@ -22,42 +22,45 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 
 ```bash
 $ git clone https://github.com/${GITHUB_USERNAME}/lab8 lab9
+$ cd lab9
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab9
-$ cd lab9
 ```
 
 ```bash
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
-$ cmake --build --target package
+$ cmake --build _build --target package
 ```
 
 ```bash
 $ git tag v0.1.0.0
+$ git push origin master
 $ git push --tags
 ```
 
 ```bash
+$ github-release --version
 $ github-release info -u ${GITHUB_USERNAME} -r lab9
 $ github-release release \
     --user ${GITHUB_USERNAME} \
     --repo lab9 \
     --tag v0.1.0.0 \
     --name "libprint" \
-    --description "my first release" \
+    --description "my first release"
 ```
 
 ```bash
-$ OS=`uname -s` AR=`uname -a` github-release upload \
+$ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
+$ github-release upload \
     --user ${GITHUB_USERNAME} \
     --repo lab9 \
     --tag v0.1.0.0 \
-    --name "${OS}-${AR}" \
-    --file _build/*.tgz
+    --name "print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz" \
+    --file _build/*.tar.gz
 ```
 
 ```bash
-$ github-release info -u ${GITHUB_USERNAME} -r lab8
+$ github-release info -u ${GITHUB_USERNAME} -r lab9
 ```
 
 ## Links
