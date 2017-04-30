@@ -51,16 +51,19 @@ $ github-release release \
 
 ```bash
 $ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
+$ export PACKAGE_FILENAME=print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz
 $ github-release upload \
     --user ${GITHUB_USERNAME} \
     --repo lab9 \
     --tag v0.1.0.0 \
-    --name "print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz" \
+    --name "${PACKAGE_FILENAME}" \
     --file _build/*.tar.gz
 ```
 
 ```bash
 $ github-release info -u ${GITHUB_USERNAME} -r lab9
+$ wget https://github.com/${GITHUB_USERNAME}/lab9/releases/download/v0.1.0.0/${PACKAGE_FILENAME}
+$ tar -ztf ${PACKAGE_FILENAME}
 ```
 
 ## Links
