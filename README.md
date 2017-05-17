@@ -38,6 +38,11 @@ $ sed -i '' 's/lab8/lab9/g' README.md
 ```
 
 ```bash
+$ travis login --auto
+$ travis enable
+```
+
+```bash
 $ git tag v0.1.0.0
 $ git push origin master
 $ git push --tags
