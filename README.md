@@ -34,7 +34,7 @@ $ cmake --build _build --target package
 ```
 
 ```bash
-$ sed -i '' 's/lab8/lab9/' README.md
+$ sed -i '' 's/lab8/lab9/g' README.md
 ```
 
 ```bash
