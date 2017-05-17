@@ -12,6 +12,7 @@ $ open https://help.github.com/articles/creating-releases/
 - [ ] 2. Ознакомиться со ссылками учебного материала
 - [ ] 3. Получить токен для доступа к репозиториям сервиса **GitHub**
 - [ ] 4. Выполнить инструкцию учебного материала
+- [ ] 5. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
@@ -30,6 +31,10 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab9
 ```bash
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
 $ cmake --build _build --target package
+```
+
+```bash
+$ sed -i '' 's/lab8/lab9/' README.md
 ```
 
 ```bash
@@ -71,3 +76,7 @@ $ tar -ztf ${PACKAGE_FILENAME}
 - [Create Release](https://help.github.com/articles/creating-releases/)
 - [Get GitHub Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 - [github-release](https://github.com/aktau/github-release)
+
+```
+Copyright (c) 2017 Vyacheslav Vershinin
+```
