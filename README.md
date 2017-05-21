@@ -29,12 +29,12 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 
 ```bash
-$ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
-$ cmake --build _build --target package
+$ sed -i '' 's/lab08/lab09/g' README.md
 ```
 
 ```bash
-$ sed -i '' 's/lab08/lab09/g' README.md
+$ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
+$ cmake --build _build --target package
 ```
 
 ```bash
@@ -44,8 +44,7 @@ $ travis enable
 
 ```bash
 $ git tag v0.1.0.0
-$ git push origin master
-$ git push --tags
+$ git push origin master --tags
 ```
 
 ```bash
