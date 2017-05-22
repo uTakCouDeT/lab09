@@ -93,6 +93,7 @@ $ gistup -m"lab${LAB_NUMBER}"
 
 - [Create Release](https://help.github.com/articles/creating-releases/)
 - [Get GitHub Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+- [Go Setup](http://www.golangbootcamp.com/book/get_setup)
 - [github-release](https://github.com/aktau/github-release)
 
 ```
