@@ -96,5 +96,5 @@ $ gistup -m"lab${LAB_NUMBER}"
 - [github-release](https://github.com/aktau/github-release)
 
 ```
-Copyright (c) 2017 Vyacheslav Vershinin
+Copyright (c) 2017 Братья Вершинины
 ```
