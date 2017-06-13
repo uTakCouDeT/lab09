@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению процесса создания пакета на примере **Github Release**
 
-```bash
+```ShellSession
 $ open https://help.github.com/articles/creating-releases/
 ```
 
@@ -16,38 +16,38 @@ $ open https://help.github.com/articles/creating-releases/
 
 ## Tutorial
 
-```bash
+```ShellSession
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab08 lab09
 $ cd lab09
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 
-```bash
+```ShellSession
 $ sed -i '' 's/lab08/lab09/g' README.md
 ```
 
-```bash
+```ShellSession
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
 $ cmake --build _build --target package
 ```
 
-```bash
+```ShellSession
 $ travis login --auto
 $ travis enable
 ```
 
-```bash
+```ShellSession
 $ git tag v0.1.0.0
 $ git push origin master --tags
 ```
 
-```bash
+```ShellSession
 $ github-release --version
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ github-release release \
@@ -58,7 +58,7 @@ $ github-release release \
     --description "my first release"
 ```
 
-```bash
+```ShellSession
 $ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
 $ export PACKAGE_FILENAME=print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz
 $ github-release upload \
@@ -69,7 +69,7 @@ $ github-release upload \
     --file _build/*.tar.gz
 ```
 
-```bash
+```ShellSession
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/releases/download/v0.1.0.0/${PACKAGE_FILENAME}
 $ tar -ztf ${PACKAGE_FILENAME}
@@ -77,7 +77,7 @@ $ tar -ztf ${PACKAGE_FILENAME}
 
 ## Report
 
-```bash
+```ShellSession
 $ cd ~/workspace/labs/
 $ export LAB_NUMBER=09
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
