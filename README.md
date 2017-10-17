@@ -42,6 +42,9 @@ $ travis login --auto
 $ travis enable
 ```
 
+[Подписать commit](
+https://help.github.com/articles/signing-commits-using-gpg/)
+
 ```ShellSession
 $ git tag v0.1.0.0
 $ git push origin master --tags
