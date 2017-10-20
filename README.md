@@ -19,6 +19,7 @@ $ open https://help.github.com/articles/creating-releases/
 ```ShellSession
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
+$ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
@@ -29,7 +30,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 
 ```ShellSession
-$ sed -i '' 's/lab08/lab09/g' README.md
+$ gsed 's/lab08/lab09/g' README.md
 ```
 
 ```ShellSession
