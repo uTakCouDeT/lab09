@@ -30,7 +30,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 
 ```ShellSession
-$ gsed 's/lab08/lab09/g' README.md
+$ gsed -i 's/lab08/lab09/g' README.md
 ```
 
 ```ShellSession
