@@ -24,8 +24,15 @@ $ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab08 lab09
-$ cd lab09
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+$ go get github.com/aktau/github-release
+```
+
+```ShellSession
+$ git clone https://github.com/${GITHUB_USERNAME}/lab08 projects/lab09
+$ cd projects/lab09
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
@@ -81,7 +88,7 @@ $ tar -ztf ${PACKAGE_FILENAME}
 ## Report
 
 ```ShellSession
-$ cd ~/workspace/labs/
+$ popd
 $ export LAB_NUMBER=09
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
