@@ -45,7 +45,6 @@ $ travis enable
 ```
 
 ```ShellSession
-# https://help.github.com/articles/signing-commits-using-gpg/
 $ git tag -s v0.1.0.0
 $ git tag -v v0.1.0.0
 $ git push origin master --tags
