@@ -11,8 +11,9 @@ $ open https://help.github.com/articles/creating-releases/
 - [ ] 1. Создать публичный репозиторий с названием **lab09** на сервисе **GitHub**
 - [ ] 2. Ознакомиться со ссылками учебного материала
 - [ ] 3. Получить токен для доступа к репозиториям сервиса **GitHub**
-- [ ] 4. Выполнить инструкцию учебного материала
-- [ ] 5. Составить отчет и отправить ссылку личным сообщением в **Slack**
+- [ ] 4. Сгенерировать GPG ключ и добавить его к аккаунту сервиса **GitHub**
+- [ ] 5. Выполнить инструкцию учебного материала
+- [ ] 6. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
@@ -43,11 +44,9 @@ $ travis login --auto
 $ travis enable
 ```
 
-[Подписать commit](
-https://help.github.com/articles/signing-commits-using-gpg/)
-
 ```ShellSession
-$ git tag v0.1.0.0
+# https://help.github.com/articles/signing-commits-using-gpg/
+$ git tag -s v0.1.0.0
 $ git push origin master --tags
 ```
 
@@ -96,7 +95,7 @@ $ gistup -m "lab${LAB_NUMBER}"
 
 - [Create Release](https://help.github.com/articles/creating-releases/)
 - [Get GitHub Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-- [Signing Commits](https://help.github.com/articles/signing-commits-using-gpg/)
+- [Signing Commits](https://help.github.com/articles/signing-commits-with-gpg/)
 - [Go Setup](http://www.golangbootcamp.com/book/get_setup)
 - [github-release](https://github.com/aktau/github-release)
 
