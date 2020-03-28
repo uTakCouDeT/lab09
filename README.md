@@ -107,5 +107,5 @@ $ gistup -m "lab${LAB_NUMBER}"
 - [github-release](https://github.com/aktau/github-release)
 
 ```
-Copyright (c) 2017 Братья Вершинины
+Copyright (c) 2015-2020 The ISC Authors
 ```
