@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению процесса создания пакета на примере **Github Release**
 
-```ShellSession
+```sh
 $ open https://help.github.com/articles/creating-releases/
 ```
 
@@ -17,47 +17,47 @@ $ open https://help.github.com/articles/creating-releases/
 
 ## Tutorial
 
-```ShellSession
+```sh
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias gsed=sed # for *-nix system
 ```
 
-```ShellSession
+```sh
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 $ go get github.com/aktau/github-release
 ```
 
-```ShellSession
+```sh
 $ git clone https://github.com/${GITHUB_USERNAME}/lab08 projects/lab09
 $ cd projects/lab09
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 
-```ShellSession
+```sh
 $ gsed -i 's/lab08/lab09/g' README.md
 ```
 
-```ShellSession
+```sh
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
 $ cmake --build _build --target package
 ```
 
-```ShellSession
+```sh
 $ travis login --auto
 $ travis enable
 ```
 
-```ShellSession
+```sh
 $ git tag -s v0.1.0.0
 $ git tag -v v0.1.0.0
 $ git push origin master --tags
 ```
 
-```ShellSession
+```sh
 $ github-release --version
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ github-release release \
@@ -68,7 +68,7 @@ $ github-release release \
     --description "my first release"
 ```
 
-```ShellSession
+```sh
 $ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
 $ export PACKAGE_FILENAME=print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz
 $ github-release upload \
@@ -79,7 +79,7 @@ $ github-release upload \
     --file _build/*.tar.gz
 ```
 
-```ShellSession
+```sh
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/releases/download/v0.1.0.0/${PACKAGE_FILENAME}
 $ tar -ztf ${PACKAGE_FILENAME}
@@ -87,7 +87,7 @@ $ tar -ztf ${PACKAGE_FILENAME}
 
 ## Report
 
-```ShellSession
+```sh
 $ popd
 $ export LAB_NUMBER=09
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
