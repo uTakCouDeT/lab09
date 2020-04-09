@@ -32,6 +32,24 @@ $ alias pbpaste='xclip -selection clipboard -o'
 ```
 
 ```sh
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+$ go get github.com/aktau/github-release
+```
+
+```sh
+$ git clone https://github.com/${GITHUB_USERNAME}/lab08 projects/lab09
+$ cd projects/lab09
+$ git remote remove origin
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
+```
+
+```sh
+$ gsed -i 's/lab08/lab09/g' README.md
+```
+
+```sh
 $ $PACKAGE_MANAGER install ${GPG_PACKAGE_NAME}
 $ gpg --list-secret-keys --keyid-format LONG
 $ gpg --full-generate-key
@@ -49,24 +67,6 @@ $ git config gpg.program gpg
 ```sh
 $ test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 $ echo 'export GPG_TTY=$(tty)' >> ~/.profile
-```
-
-```sh
-$ cd ${GITHUB_USERNAME}/workspace
-$ pushd .
-$ source scripts/activate
-$ go get github.com/aktau/github-release
-```
-
-```sh
-$ git clone https://github.com/${GITHUB_USERNAME}/lab08 projects/lab09
-$ cd projects/lab09
-$ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
-```
-
-```sh
-$ gsed -i 's/lab08/lab09/g' README.md
 ```
 
 ```sh
