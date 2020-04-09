@@ -20,7 +20,36 @@ $ open https://help.github.com/articles/creating-releases/
 ```sh
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
-$ alias gsed=sed # for *-nix system
+$ export PACKAGE_MANAGER=<пакетный менеджер>
+$ export GPG_PACKAGE_NAME=<gpg2|gpg>
+
+
+```sh
+# for *-nix system
+$ $PACKAGE_MANAGER install xclip
+$ alias gsed=sed
+$ alias pbcopy='xclip -selection clipboard'
+$ alias pbpaste='xclip -selection clipboard -o'
+```
+
+```sh
+$ $PACKAGE_MANAGER install ${GPG_PACKAGE_NAME}
+$ gpg --list-secret-keys --keyid-format LONG
+$ gpg --full-generate-key
+$ gpg --list-secret-keys --keyid-format LONG
+$ gpg -K ${GITHUB_USERNAME}
+$ GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep ssb | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
+$ GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
+$ gpg --armor --export ${GPG_KEY_ID} | pbcopy
+$ pbpaste
+$ open https://github.com/settings/keys
+$ git config user.signingkey ${GPG_SEC_KEY_ID}
+$ git config gpg.program gpg
+```
+
+```sh
+$ test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
+$ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 ```
 
 ```sh
@@ -54,6 +83,7 @@ $ travis enable
 ```sh
 $ git tag -s v0.1.0.0
 $ git tag -v v0.1.0.0
+$ git show v0.1.0.0
 $ git push origin master --tags
 ```
 
