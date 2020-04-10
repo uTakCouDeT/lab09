@@ -1,6 +1,6 @@
 ## Laboratory work IX
 
-[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/tp-labs/lab09/master/preview.png)](https://yandex.ru/efir/?stream_id=vYrKRcFKi46o)
+<a href="https://yandex.ru/efir/?stream_id=vYrKRcFKi46o"><img src="https://raw.githubusercontent.com/tp-labs/lab09/master/preview.png" width="640"/></a>
 
 Данная лабораторная работа посвещена изучению процесса создания артефактов на примере **Github Release**
 
