@@ -1,6 +1,6 @@
 ## Laboratory work IX
 
-Данная лабораторная работа посвещена изучению процесса создания пакета на примере **Github Release**
+Данная лабораторная работа посвещена изучению процесса создания артефактов на примере **Github Release**
 
 ```sh
 $ open https://help.github.com/articles/creating-releases/
