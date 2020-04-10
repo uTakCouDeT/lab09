@@ -21,7 +21,7 @@ $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export PACKAGE_MANAGER=<пакетный менеджер>
 $ export GPG_PACKAGE_NAME=<gpg2|gpg>
-
+```
 
 ```sh
 # for *-nix system
