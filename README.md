@@ -1,7 +1,5 @@
 ## Laboratory work IX
 
-<a href="https://yandex.ru/efir/?stream_id=vYrKRcFKi46o"><img src="https://raw.githubusercontent.com/tp-labs/lab09/master/preview.png" width="640"/></a>
-
 Данная лабораторная работа посвещена изучению процесса создания артефактов на примере **Github Release**
 
 ```sh
@@ -138,5 +136,5 @@ $ gistup -m "lab${LAB_NUMBER}"
 - [github-release](https://github.com/aktau/github-release)
 
 ```
-Copyright (c) 2015-2020 The ISC Authors
+Copyright (c) 2015-2021 The ISC Authors
 ```
