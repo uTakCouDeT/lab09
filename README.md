@@ -139,8 +139,9 @@ $ gistup -m "lab${LAB_NUMBER}"
 Copyright (c) 2015-2021 The ISC Authors
 ```
 
-
+```sh
 sudo apt install gpg
+
 gpg --list-secret-keys --keyid-format LONG
 gpg --full-generate-key
 
@@ -159,3 +160,4 @@ git tag -s v0.1.0.0
 git tag -v v0.1.0.0
 git show v0.1.0.0
 git push origin main --tags
+```
