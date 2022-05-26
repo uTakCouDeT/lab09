@@ -146,7 +146,7 @@ Copyright (c) 2015-2021 The ISC Authors
 sudo apt install gpg
 ```
 
-Команда для перечисления длинной формы идентификаторов ключей GPG, выводится как открытый, так и закрытый ключ. Закрытый ключ необходим для подписи коммитов или тегов:
+Команда для перечисления длинной формы идентификаторов секретных ключей GPG, выводится как открытый, так и закрытый ключ. Закрытый ключ необходим для подписи коммитов или тегов:
 ```sh
 gpg --list-secret-keys --keyid-format LONG
 ```
@@ -172,7 +172,7 @@ GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep ssb | tail -1 | a
 GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
 ```
 
-Печатать идентификатор ключа GPG в формате ASCII armor
+Печатать идентификатор ключа GPG в формате ASCII armor для добавления в GitHub аккаунт
 ```sh
 gpg --armor --export ${GPG_KEY_ID} | cat
 ```
