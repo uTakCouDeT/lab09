@@ -141,7 +141,7 @@ Copyright (c) 2015-2021 The ISC Authors
 
 ## Выполнение работы
 
-Установка утилиты gpg.
+Установка утилиты gpg
 ```sh
 sudo apt install gpg
 ```
@@ -165,7 +165,8 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG
 ```
 
-Извлекаем в переменную GPG_KEY_ID и GPG_SEC_KEY_ID длинные формы идентификаторов ключей GPG (открытого и закрытого соответсвенно)
+Извлекаем в переменную GPG_KEY_ID и GPG_SEC_KEY_ID длинные формы идентификаторов ключей GPG 
+(открытого и закрытого соответсвенно)
 ```sh
 GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep ssb | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
 GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
