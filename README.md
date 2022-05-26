@@ -141,23 +141,34 @@ Copyright (c) 2015-2021 The ISC Authors
 
 ## Выполнение работы
 
+Установка утилиты gpg
 ```sh
 sudo apt install gpg
+```
 
+```sh
 gpg --list-secret-keys --keyid-format LONG
 gpg --full-generate-key
+```
 
+```sh
 gpg --list-secret-keys --keyid-format LONG
-
+```
+```sh
 GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep ssb | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
+```
 
+```sh
 GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
 gpg --armor --export ${GPG_KEY_ID} | cat
+```
 
+```sh
 git config user.signingkey ${GPG_SEC_KEY_ID}
-
 git config gpg.program gpg
+```
 
+```sh
 git tag -s v0.1.0.0
 git tag -v v0.1.0.0
 git show v0.1.0.0
