@@ -139,7 +139,7 @@ $ gistup -m "lab${LAB_NUMBER}"
 Copyright (c) 2015-2021 The ISC Authors
 ```
 
-##Выполнение работы
+## Выполнение работы
 
 ```sh
 sudo apt install gpg
