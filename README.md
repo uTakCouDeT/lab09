@@ -141,32 +141,47 @@ Copyright (c) 2015-2021 The ISC Authors
 
 ## Выполнение работы
 
-Установка утилиты gpg
+Установка утилиты gpg.
 ```sh
 sudo apt install gpg
 ```
 
+Команда для перечисления длинной формы идентификаторов ключей GPG, выводится как открытый, так и закрытый ключ. Закрытый ключ необходим для подписи коммитов или тегов:
 ```sh
 gpg --list-secret-keys --keyid-format LONG
+```
+
+так как используемая верся gpg 2.2.27 или выше, при помощи данной команды можно создать пару ключей GPG.
+```sh
 gpg --full-generate-key
 ```
+Далее необходимо выбрать тип и размер ключа. Нажатием клавиши Enter выбираем значения по умолчанию. 
+Потом нужно выбрать время, в течение которого ключ должен быть действителен 
+(нажатием Enter создаём бессрочный ключ)
+Вводим идентификационные данные пользователя и кодовую фразу
 
+Выводим наши ключи
 ```sh
 gpg --list-secret-keys --keyid-format LONG
 ```
+
+Извлекаем в переменную GPG_KEY_ID и GPG_SEC_KEY_ID длинные формы идентификаторов ключей GPG (открытого и закрытого соответсвенно)
 ```sh
 GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep ssb | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
+GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
 ```
 
+Печатать идентификатор ключа GPG в формате ASCII armor
 ```sh
-GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1 | awk '{print $2}' | awk -F'/' '{print $2}')
 gpg --armor --export ${GPG_KEY_ID} | cat
 ```
 
+Настройка GPG для подписания коммитов Git
 ```sh
 git config user.signingkey ${GPG_SEC_KEY_ID}
 git config gpg.program gpg
 ```
+
 
 ```sh
 git tag -s v0.1.0.0
